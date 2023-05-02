@@ -1,0 +1,10 @@
+---
+- name: Install docker
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Install docker
+      apt: name=docker-ce
+    - name: Start docker
+      service: name=docker state=started enabled=yes
